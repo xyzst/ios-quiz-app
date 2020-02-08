@@ -18,20 +18,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var falseButton: UIButton!
     
-    struct Question {
-        var question: String
-        var answer: Bool
-        
-        init(question: String, answer: Bool) {
-            self.question = question
-            self.answer = answer
-        }
-        
-        func isCorrect(answer: Bool) -> Bool {
-            return self.answer == answer
-        }
-    }
-    
     let questions =  [
         Question(question: "4 + 2 is equal to 6?", answer: true),
         Question(question: "5 - 3 is greater than 1?", answer: true),
