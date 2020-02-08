@@ -63,7 +63,7 @@ class ViewController: UIViewController {
             resetUI()
         }
         
-        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(delayedEffect), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(delayedEffect), userInfo: nil, repeats: false)
     
     }
     
