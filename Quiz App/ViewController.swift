@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        questionLabel.text = "4 + 2 is equal to 6?"
     }
 
     @IBAction func answerReceived(_ sender: Any) {
