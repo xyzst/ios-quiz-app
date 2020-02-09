@@ -3,7 +3,9 @@
 //  Quiz App
 //
 //  This is the "model" in the MVC design pattern. Contains the main logic for
-//  determining is a user provided answer is correct or incorrect.
+//  determining if a user provided answer is correct or incorrect.
+//
+//  Maintains state about the currently selected question.
 //
 //  Created by Darren Rambaud on 2/8/20.
 //  Copyright © 2020 Darren Rambaud. All rights reserved.
