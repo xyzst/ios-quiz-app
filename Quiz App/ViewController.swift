@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = questions[0].question
+        resetUI()
     }
 
     @IBAction func answerReceived(_ sender: UIButton) {
@@ -59,6 +59,7 @@ class ViewController: UIViewController {
     func updateQuestionUI() {
         if (currentQuestion < questions.capacity) {
             questionLabel.text = questions[currentQuestion].question
+            progressBar.setProgress((Float(currentQuestion + 1) / Float(questions.capacity)), animated: true)
         } else {
             resetUI()
         }
@@ -75,6 +76,7 @@ class ViewController: UIViewController {
     func resetUI() {
         currentQuestion = 0
         questionLabel.text = questions[currentQuestion].question
+        progressBar.setProgress(0.0, animated: true)
     }
     
 }
