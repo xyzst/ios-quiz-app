@@ -11,10 +11,12 @@ import Foundation
 struct Question {
     let question: String
     let answer: Bool
+    let points: Double
     
-    init(question: String, answer: Bool) {
+    init(question: String, answer: Bool, points: Double) {
         self.question = question
         self.answer = answer
+        self.points = points
     }
     
     func isCorrect(answer: Bool) -> Bool {

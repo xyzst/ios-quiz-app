@@ -13,6 +13,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var lastScoreLabel: UILabel!
+    
     @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet weak var progressBar: UIProgressView!
@@ -26,6 +30,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionLabel.text = quizModel.getCurrentQuestion()
+        scoreLabel.text = "Current Score: \(quizModel.getScore())"
+        lastScoreLabel.text = "Last Score: \(quizModel.getLastScore())"
         progressBar.setProgress(quizModel.getCurrentProgress(), animated: true)
     }
 
@@ -33,6 +39,8 @@ class ViewController: UIViewController {
         let answer = NSString(string: sender.currentTitle!).boolValue
         
         sender.backgroundColor = quizModel.isCorrect(answer) ? UIColor.green : UIColor.red
+        scoreLabel.text = "Current Score: \(quizModel.getScore())"
+        lastScoreLabel.text = "Last Score: \(quizModel.getLastScore())"
         questionLabel.text = quizModel.getCurrentQuestion()
         progressBar.setProgress(quizModel.getCurrentProgress(), animated: true)
 
