@@ -2,6 +2,9 @@
 //  ViewController.swift
 //  Quiz App
 //
+//  As per MVC architecture, holds references to the model and view. Depending
+//  on the state of the model, will update the view elements accordingly.
+//
 //  Created by Darren Rambaud on 02/03/2020.
 //  Copyright © 2020 Darren Rambaud. All rights reserved.
 //
@@ -18,20 +21,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var falseButton: UIButton!
     
-    var quizBrain = QuizBrain()
+    var quizModel = QuizModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = quizBrain.getCurrentQuestion()
-        progressBar.setProgress(quizBrain.getCurrentProgress(), animated: true)
+        questionLabel.text = quizModel.getCurrentQuestion()
+        progressBar.setProgress(quizModel.getCurrentProgress(), animated: true)
     }
 
     @IBAction func answerReceived(_ sender: UIButton) {
         let answer = NSString(string: sender.currentTitle!).boolValue
         
-        sender.backgroundColor = quizBrain.isCorrect(answer) ? UIColor.green : UIColor.red
-        questionLabel.text = quizBrain.getCurrentQuestion()
-        progressBar.setProgress(quizBrain.getCurrentProgress(), animated: true)
+        sender.backgroundColor = quizModel.isCorrect(answer) ? UIColor.green : UIColor.red
+        questionLabel.text = quizModel.getCurrentQuestion()
+        progressBar.setProgress(quizModel.getCurrentProgress(), animated: true)
 
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(delayedEffect), userInfo: nil, repeats: false)
     }

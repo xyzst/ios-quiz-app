@@ -1,6 +1,9 @@
 //
 //  QuizBrain.swift
-//  Quizzler-iOS13
+//  Quiz App
+//
+//  This is the "model" in the MVC design pattern. Contains the main logic for
+//  determining is a user provided answer is correct or incorrect.
 //
 //  Created by Darren Rambaud on 2/8/20.
 //  Copyright © 2020 Darren Rambaud. All rights reserved.
@@ -8,7 +11,7 @@
 
 import Foundation
 
-struct QuizBrain {
+struct QuizModel {
     let questions =  [
         Question(question: "A slug's blood is green.", answer: true),
         Question(question: "Approximately one quarter of human bones are in the feet.", answer: true),

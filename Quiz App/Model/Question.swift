@@ -1,6 +1,6 @@
 //
 //  Question.swift
-//  Quizzler-iOS13
+//  Quiz App
 //
 //  Created by Darren Rambaud on 2/8/20.
 //  Copyright © 2020 Darren Rambaud. All rights reserved.
